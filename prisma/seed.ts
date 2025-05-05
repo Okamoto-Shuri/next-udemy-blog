@@ -12,8 +12,8 @@ async function main(){
 
     //ダミー画像URL
     const dummyImages = [
-        'https://picsum.phoths/seed/post1/600/400',
-        'https://picsum.phoths/seed/post2/600/400'
+        'https://picsum.photos/seed/post1/600/400',
+        'https://picsum.photos/seed/post2/600/400'
     ]
 
     //ユーザー作成
