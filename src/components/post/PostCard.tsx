@@ -35,7 +35,7 @@ import { PostCardProps } from '@/types/post'
                     {post.content}
                 </p>
                 <div className="flex items-center justify-between text-sm text-gray-500">
-                    <span>{post.auther.name}</span>
+                    <span>{post.author.name}</span>
                     <time>{
                     formatDistanceToNow(new Date(post.createdAt),{
                         addSuffix: true,

@@ -4,7 +4,7 @@ export async function getPosts(){
     return await prisma.post.findMany({
         where: { published: true},
         include: {
-            auther: {
+            author: {
                 select: {
                     name: true
                 }
@@ -20,7 +20,7 @@ export async function getPost(id: string){
     return await prisma.post.findUnique({
         where: { id },
         include: {
-            auther: {
+            author: {
                 select: {
                     name: true
                 }
@@ -46,7 +46,7 @@ export async function searchPosts(search: string){
             AND: filters
         },
         include: {
-            auther: {
+            author: {
                 select: {
                     name: true
                 }
