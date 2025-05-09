@@ -4,7 +4,7 @@ export type Post = {
     content: string
     topImage: string | null
     createdAt: Date
-    auther: {
+    author: {
         name: string
     }
 }

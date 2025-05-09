@@ -1,5 +1,9 @@
 const config = {
-  plugins: ["@tailwindcss/postcss"],
+  plugins: [
+    "tailwindcss-animate",
+    "@tailwindcss/typography",
+    "@tailwindcss/postcss"
+  ],
 };
 
 export default config;

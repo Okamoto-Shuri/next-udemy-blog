@@ -1,10 +1,9 @@
 'use server';
- 
+
 import { signIn } from '@/auth';
 import { AuthError } from 'next-auth';
 import { redirect } from 'next/navigation'
- 
- 
+
 export async function authenticate(
   prevState: string | undefined,
   formData: FormData,
@@ -19,11 +18,11 @@ export async function authenticate(
     
   } catch (error) {
     if (error instanceof AuthError) {
-      switch (error.type) {
-        case 'CredentialsSignin':
-          return 'メールアドレスまたはパスワードが正しくありません。';
-        default:
-          return 'エラーが発生しました。';
+      // error.typeではなく、error.name or error.messageを使う
+      if (error.name === 'CredentialsSignin' || error.message.includes('CredentialsSignin')) {
+        return 'メールアドレスまたはパスワードが正しくありません。';
+      } else {
+        return 'ログイン中にエラーが発生しました。';
       }
     }
     throw error;
