@@ -10,7 +10,8 @@ export async function saveImage(file: File): Promise<string | null>{
         const filePath = path.join(uploadDir, fileName)
         await writeFile(filePath, buffer)
         return `/images/${fileName}`
-    } catch /*(error)*/{
+    } catch (error){
+        console.log("画像保存エラー", error)
         return null
     }
 }
